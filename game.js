@@ -46,7 +46,7 @@ function playerTurn(e) {
       .map((box, index) => (box ? null : index))
       .filter((box) => box !== null)
     if (emptyBoxes.length === 0) {
-      p.textContent = 'Oyun Bərabər Bitdi!'
+      p.textContent = 'Oyun Beraber Bitdi!'
       disableGameBoard()
       return
     }
@@ -78,7 +78,7 @@ function checkWinner(option) {
 
 function declareWinner(option, condition) {
   const winnerText =
-    option === playerOption ? 'Siz Qalib Gəldiniz...' : 'Bot Qalib Gəldi...'
+    option === playerOption ? 'Siz Qalib Geldiniz...' : 'Bot Qalib Geldi...'
   if (option !== playerOption) {
     comp.textContent = ++compScore
   } else {
