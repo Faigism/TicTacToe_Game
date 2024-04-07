@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: hidden;
+}
+h1 {
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  background-color: antiquewhite;
+  border-radius: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+.disabled {
+  opacity: 0.5;
+}
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .score {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    div {
+      text-align: center;
+      span {
+        color: cadetblue;
+        font-size: 20px;
+      }
+    }
+  }
+  p {
+    height: 30px;
+    font-size: 30px;
+    color: rgb(158, 121, 193);
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    padding-bottom: 20px;
+  }
+  .game-board {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    div {
+      width: calc(100% / 3 - 1.6px);
+      height: calc(100% / 3 - 1.6px);
+      border-right: 1px solid rgb(117, 113, 113);
+      border-bottom: 1px solid rgb(117, 113, 113);
+      cursor: pointer;
+      font-size: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:nth-child(3n) {
+        border-right: none;
+      }
+      &:nth-child(6) ~ div {
+        border-bottom: none;
+      }
+      &:nth-child(10) {
+        border-right: 10px solid rgb(0, 0, 0);
+        border-radius: 10px;
+      }
+    }
+    .winning-line {
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      pointer-events: none;
+    }
+  }
+  button {
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #729792;
+    color: #333;
+    border: none;
+    font-size: 18px;
+    transition: 0.3s;
+    font-weight: 600;
+  }
+  button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+}
